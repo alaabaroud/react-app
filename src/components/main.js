@@ -1,13 +1,42 @@
 import React from 'react';
 import Hornedbeastes from './hornedbeasts';
-import '../App.css';
+// import '../App.css';
+import HornedDate from './HornedData.json';
+// import { CardColumns } from 'react-bootstrap';
+
+import Row from 'react-bootstrap/Row';
+
 
 class main extends React.Component {
+    constructor (props){
+    super(props);
+    this.state = {
+        hornedData : HornedDate,
+    }
+}
+
+
     render (){
 
         return(
-            <div className = 'cards'>
-            <Hornedbeastes title= "UniWhal"
+            <div>
+                <Row xs={2} md={3} className="g-4">
+                <h1> Horned Beastes </h1>
+               { this.state.hornedData.map(item => {
+                        return (
+                            <Hornedbeastes
+                            title= {item.title}
+                            imgUrl = {item.image_url}
+                            description = {item.description}
+                        />)
+                        }
+               )
+                        
+    }
+    </Row>
+    
+    {/* </CardColumns> */}
+            {/* <Hornedbeastes title= "UniWhal"
             imgurl = "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"
             description="A unicorn and a narwhal nuzzling their horns"
             />
@@ -96,7 +125,7 @@ class main extends React.Component {
             <Hornedbeastes title= "Smaug"
             imgurl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Smaug_par_David_Demaret.jpg/290px-Smaug_par_David_Demaret.jpg"
             description="Fan illustration of Smaug from 'The Hobbit'"
-            />
+            /> */}
 
 
 

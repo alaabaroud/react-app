@@ -1,6 +1,9 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col'
+
 
 class Hornedbeastes extends React.Component {
 
@@ -29,10 +32,10 @@ class Hornedbeastes extends React.Component {
 
 
             
+<Col>
+<Card>
 
-<Card className="card">
-
-  <Card.Img  onClick={this.incremenclicks} variant="top" src={this.props.imgurl} style={{ width: '18rem' }} />
+  <Card.Img  onClick={this.incremenclicks} variant="top" src={this.props.imgUrl} style={{ width: '18rem' }} />
 
   <Card.Body>
     <Card.Title>{this.props.description}</Card.Title>
@@ -40,9 +43,10 @@ class Hornedbeastes extends React.Component {
      Number of votes 🦄 : {this.state.numOfclicks}
     
       </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    {/* <Button variant="primary">Go somewhere</Button> */}
   </Card.Body>
 </Card>
+</Col>
 
           
 
