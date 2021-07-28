@@ -33,9 +33,9 @@ class Hornedbeastes extends React.Component {
 
             
 <Col>
+<div className='row'>
 <Card>
-
-  <Card.Img  onClick={this.incremenclicks} variant="top" src={this.props.imgUrl} style={{ width: '18rem' }} />
+  <Card.Img  onClick={this.incremenclicks} variant="top" src={this.props.imgUrl}  style={{ width: '18rem' }} />
 
   <Card.Body>
     <Card.Title>{this.props.description}</Card.Title>
@@ -46,12 +46,16 @@ class Hornedbeastes extends React.Component {
     {/* <Button variant="primary">Go somewhere</Button> */}
   </Card.Body>
 </Card>
+</div>
 </Col>
+
+
 
           
 
             </>
         )
+        
     }
 
 }

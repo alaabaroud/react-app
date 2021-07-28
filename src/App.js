@@ -2,7 +2,12 @@ import React from 'react';
 import Header from './components/header';
 import Footer from './components/footer';
 import Main from './components/main';
-import SelectedBeast from './components/selectedBeast';
+import Filter from './components/filter';
+
+import './index.css';
+
+
+// import SelectedBeast from './components/selectedBeast';
 
 class App extends React.Component{
 
@@ -12,7 +17,10 @@ class App extends React.Component{
     return(
       <>
       <Header />
+      <Filter/> 
       <Main/>
+      {/* <SelectedBeast/> */}
+      
       <Footer />
       </>
 

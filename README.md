@@ -71,3 +71,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 **mohammad kabbara helped me with the voting part**
+**hatem sallam helped me with the filter**
+
+
