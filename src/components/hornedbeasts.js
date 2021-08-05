@@ -1,9 +1,6 @@
 import React from 'react';
-// import Button from 'react-bootstrap/Button';
-
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
-import Col from 'react-bootstrap/Col'
-
 
 class Hornedbeastes extends React.Component {
 
@@ -22,6 +19,7 @@ class Hornedbeastes extends React.Component {
 
     render (){
         return(
+          
             <>
             {/* <h2> {this.props.title}</h2>
             <img 
@@ -32,10 +30,10 @@ class Hornedbeastes extends React.Component {
 
 
             
-<Col>
-<div className='row'>
-<Card>
-  <Card.Img  onClick={this.incremenclicks} variant="top" src={this.props.imgUrl}  style={{ width: '18rem' }} />
+
+<Card className="card">
+
+  <Card.Img  onClick={this.incremenclicks} variant="top" src={this.props.imgurl} style={{ width: '18rem' }} />
 
   <Card.Body>
     <Card.Title>{this.props.description}</Card.Title>
@@ -46,16 +44,11 @@ class Hornedbeastes extends React.Component {
     {/* <Button variant="primary">Go somewhere</Button> */}
   </Card.Body>
 </Card>
-</div>
-</Col>
-
-
 
           
 
             </>
         )
-        
     }
 
 }
