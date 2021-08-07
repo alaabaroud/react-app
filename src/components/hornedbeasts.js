@@ -1,6 +1,9 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col'
+import selectedBeast  from './selectedBeast ';
 
 class Hornedbeastes extends React.Component {
 
@@ -15,36 +18,37 @@ class Hornedbeastes extends React.Component {
         this.setState({
             numOfclicks: this.state.numOfclicks + 1
         })
-    }
+      };
+  
+      getData=() =>{
+        this.props.handleopen();
+        this.props.handleData(this.props.title,this.props.imgUrl,this.props.description,this.incremenclicks());
+      }
+
+      
 
     render (){
         return(
           
             <>
-            {/* <h2> {this.props.title}</h2>
-            <img 
-            src= {this.props.imgurl}
-            alt= {this.props.title}
-            title= {this.props.title}/>
-            <p>{this.props.description}</p> */}
-
+           <Col>
 
             
 
-<Card className="card">
+<Card className="card" onClick={this.getData}>
 
-  <Card.Img  onClick={this.incremenclicks} variant="top" src={this.props.imgurl} style={{ width: '18rem' }} />
+  <Card.Img  onClick={this.incremenclicks} variant="top" src={this.props.imgUrl} style={{ width: '18rem' }} />
 
   <Card.Body>
     <Card.Title>{this.props.description}</Card.Title>
     <Card.Text>
-     Number of votes 🦄 : {this.state.numOfclicks}
+     Number of Likes 🦄 : {this.state.numOfclicks}
     
       </Card.Text>
     {/* <Button variant="primary">Go somewhere</Button> */}
   </Card.Body>
 </Card>
-
+</Col>
           
 
             </>
