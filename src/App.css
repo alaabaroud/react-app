@@ -36,5 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  background-color: #282c34;
+  color: bisque;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+
+}
+
+.card {
+  margin: 10%;
+  background-color: cadetblue;
+
+}
+
+img {
+  height: 50%;
+  width: 10%;
+}
+
+Form {
+  width: 30%;
+  padding: 5%;
+  margin-left: 33.3%;
+}
+
+h1 {
+  margin-top: 5%;
+}
+
+ 
  
 

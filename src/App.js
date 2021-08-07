@@ -1,86 +1,80 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/header';
-import Footer from './components/footer';
-import Main from './components/main';
- 
-import selectedBeast from './components/selectedBeast';
 
-import './index.css';
-class App extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false,
-      description: '',
-      src: '',
-      title: '',
-      numOfclick: 0,
+// class App extends React.Component{
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       show: false,
+//       description: '',
+//       imgUrl: 'URL',
+//       title: '',
 
-    }
-  }
-
-  handleopen = () => {
-    this.setState({
-            show: true
-
-    })
-  }
-
-  handleClose = () => {
-    this.setState({
-            show: false
-
-
-    })
-};
-
-handleData = (title, src, description, numOfclicks)=>{
-  this.setState({
-    title: title,
-    src: src,
-    description: description,
-    numOfclicks: numOfclicks,
-
-  })
-}
+//     }
+//   }
+//   handleData = (title, imgUrl, description, show)=>{
+//     this.setState({
+//       title: title,
+//       imgUrl: imgUrl,
+//       description: description,
+//       show: show,
   
+//     })
+//   }
 
-  render(){
-    return(
-      <>
-      <Header />
-     
-      <Main
+//   
 
-      handleopen={this.handleopen}
-      handleData={this.handleData}
-      />
-      
-      <selectedBeast
+import React from 'react';
+import Header from './components/header';
 
-      show ={this.state.show}
-      handleClose = {this.handleClose}
-      description = {this.props.description}
-      
-      title = { this.state.title
+import Main from './components/Main';
+
+import './App.css';
+
+import SelectedBeast from './components/SelectedBeast';
+
+import Footer from './components/footer';
+import Data from './components/HornedData.json';
+
+  class App extends React.Component{
+      constructor(props) {
+        super(props);
+        this.state = {
+          show: false,
+          description: '',
+          imgUrl: 'URL',
+          title: '',
+    
+        }
       }
-      src = {this.state.src}
 
-      numOfclicks={this.props.numOfclicks}
-      />
+  handleData = (title, imgUrl, description, show) => {
+    this.setState({
+       title: title,
+        imgUrl: imgUrl,
+           description: description,
+          show: show });
+  };
 
-      
-      <Footer  />
-      
-       
-     
+  modal = (show) =>{
+     this.setState ({
+       show:show
+      })
+}
+  render() {
+    return (
+      <>
+        <Header />
+        <SelectedBeast
+         title={this.state.title}
+          imgUrl={this.state.imgUrl}
+           description={this.state.description}
+            handleOpen={this.state.show}
+            handleClose = {this.modal} />
+        <Main data={Data}
+         handleData={this.handleData} />
+        <Footer />
       </>
-
     )
   }
-
-
-  
 }
+
 export default App;
